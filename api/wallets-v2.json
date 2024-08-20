@@ -1,0 +1,40 @@
+[{app_name: "telegram-wallet", name: "Wallet", image: "https://wallet.tg/images/logo-288.png",…},…]
+0
+: 
+{app_name: "telegram-wallet", name: "Wallet", image: "https://wallet.tg/images/logo-288.png",…}
+1
+: 
+{app_name: "tonkeeper", name: "Tonkeeper", image: "https://tonkeeper.com/assets/tonconnect-icon.png",…}
+2
+: 
+{app_name: "mytonwallet", name: "MyTonWallet", image: "https://static.mytonwallet.io/icon-256.png",…}
+3
+: 
+{app_name: "openmask", name: "OpenMask",…}
+4
+: 
+{app_name: "tonhub", name: "Tonhub", image: "https://tonhub.com/tonconnect_logo.png",…}
+5
+: 
+{app_name: "dewallet", name: "DeWallet",…}
+6
+: 
+{app_name: "xtonwallet", name: "XTONWallet",…}
+7
+: 
+{app_name: "tonwallet", name: "TON Wallet", image: "https://wallet.ton.org/assets/ui/qr-logo.png",…}
+8
+: 
+{app_name: "bitgetTonWallet", name: "Bitget Wallet",…}
+9
+: 
+{app_name: "safepalwallet", name: "SafePal",…}
+10
+: 
+{app_name: "okxTonWallet", name: "OKX Wallet",…}
+11
+: 
+{app_name: "okxTonWalletTr", name: "OKX TR Wallet",…}
+12
+: 
+{app_name: "hot", name: "HOT", image: "https://raw.githubusercontent.com/hot-dao/media/main/logo.png",…}

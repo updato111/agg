@@ -118,20 +118,20 @@ const H = f0.Fragment
     isDev: !0,
     apiHost: "https://staging-backend-mjieg.ondigitalocean.app",
     showDebugger: !1,
-    botLink: "https://t.me/AgeCoinBot",
+    botLink: "https://t.me/Dragondemotapbot",
     xLink: "https://x.com/vieradeveloper",
     telegramChannel: "https://t.me/vierapy",
-    tonConnectManifestUrl: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/manifest.json",
+    tonConnectManifestUrl: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/assets/manifest.json",
     tonConnectWalletsListSource: "https://raw.githubusercontent.com/ton-connect/wallets-list/main/wallets-v2.json"
 }
   , L1 = {
     isProd: !0,
     apiHost: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/api",
     showDebugger: !1,
-    botLink: "https://t.me/AgeCoinBot",
-    xLink: "https://x.com/osClub",
-    telegramChannel: "https://t.me/osClub",
-    tonConnectManifestUrl: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/manifest.json",
+    botLink: "https://t.me/Dragondemotapbot",
+    xLink: "https://x.com/vieradeveloper",
+    telegramChannel: "https://t.me/vierapy",
+    tonConnectManifestUrl: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/assets/manifest.json",
     tonConnectWalletsListSource: "https://raw.githubusercontent.com/ton-connect/wallets-list/main/wallets-v2.json"
 };
 let v0;
@@ -161,7 +161,7 @@ const L = v0
     after401: ()=>{}
     ,
     get: async({endpoint: t, options: o, host: a})=>{
-        const i = i0.get(`${a || a0}568327518`, {
+        const i = i0.get(`${a || a0}${t}`, {
             searchParams: o
         });
         return new Promise(async(y,e)=>{
@@ -184,7 +184,7 @@ const L = v0
         };
         a && (x.json = a),
         i && (x.body = i);
-        const k = await i0.post(`${a0}568327518`, x).json().catch(l=>{
+        const k = await i0.post(`${a0}${t}`, x).json().catch(l=>{
             y({
                 ok: !1,
                 data: null
@@ -194,7 +194,7 @@ const L = v0
         y(k)
     }
     ),
-    delete: async({endpoint: t})=>await i0.delete(`${a0}568327518`).json(),
+    delete: async({endpoint: t})=>await i0.delete(`${a0}${t}`).json(),
     postWithBodyResponse: async({endpoint: t, options: o, data: a, formData: i})=>new Promise(async(y,e)=>{
         const x = {
             ...o
@@ -202,7 +202,7 @@ const L = v0
         a && (x.json = a),
         i && (x.body = i),
         x.throwHttpErrors = !1;
-        const k = await i0.post(`${a0}568327518`, x).json();
+        const k = await i0.post(`${a0}${t}`, x).json();
         return y(k)
     }
     ),
@@ -262,49 +262,49 @@ class t0 {
 }
 const F1 = async t=>({
     data: await G.get({
-        endpoint: `/leaderboard/?user_id=568327518`
+        endpoint: `/leaderboard/?user_id=${t}`
     })
 })
   , G1 = async(t,o)=>({
     data: await G.get({
-        endpoint: `/tasks/?user_id=568327518&reference=${o}`
+        endpoint: `/tasks/?user_id=${t}&reference=${o}`
     })
 })
   , N1 = async t=>({
     data: await G.get({
         host: "https://clicker-api.joincommunity.xyz",
-        endpoint: `/tier/user/568327518`
+        endpoint: `/tier/user/${t}`
     })
 })
   , $1 = async({slug: t, telegramId: o, refId: a})=>({
     data: await G.post({
-        endpoint: `/tasks/verify?task=568327518&user_id=${o}&reference=${a}`
+        endpoint: `/tasks/verify?task=${t}&user_id=${o}&reference=${a}`
     })
 })
   , j1 = async(t,o)=>await G.post({
-    endpoint: `/tasks/reset/?&user_id=568327518&reference=${o}`
+    endpoint: `/tasks/reset/?&user_id=${t}&reference=${o}`
 })
   , I1 = async t=>{
     var a;
     return {
         data: await G.post({
-            endpoint: t ? `/join/?invite_hash=568327518` : "/join/",
+            endpoint: t ? `/join/?invite_hash=${t}` : "/join/",
             formData: (a = window == null ? void 0 : window.Telegram) == null ? void 0 : a.WebApp.initData
         })
     }
 }
   , A1 = async(t,o)=>({
     data: await G.get({
-        endpoint: `/frens/?user_id=568327518&reference=${o}`
+        endpoint: `/frens/?user_id=${t}&reference=${o}`
     })
 })
   , B1 = async t=>({
     data: await G.get({
-        endpoint: `/rewards/?user_id=568327518`
+        endpoint: `/rewards/?user_id=${t}`
     })
 })
   , M1 = async(t,o)=>await G.post({
-    endpoint: `/wallet/nonce/?user_id=568327518&reference=${o}`
+    endpoint: `/wallet/nonce/?user_id=${t}&reference=${o}`
 })
   , R1 = async t=>await G.post({
     data: t.wallet,
@@ -341,7 +341,15 @@ const F1 = async t=>({
     return o
 }
 ;
-
+function H1(t) {
+    const o = [];
+    return D1.forEach(a=>{
+        const i = t.find(y=>y.slug === a.slug);
+        i && o.push(O1(i, a))
+    }
+    ),
+    o
+}
 function O1(t, o) {
     return {
         id: t.id,
@@ -1859,7 +1867,7 @@ function S6() {
             const x = `${L.botLink}/join/?startapp=${t == null ? void 0 : t.reference}`;
             let k = t == null ? void 0 : t.age;
             (t == null ? void 0 : t.age) <= 0 ? k = 1 : (t == null ? void 0 : t.age) > 11 && (k = 11);
-            const l = `https://agecoin.vpnmanager.site/story/${k}.mp4`;
+            const l = `https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/story/${k}.mp4`;
             try {
                 l0.shareToStory(l, {
                     text: `${x} #AGE #AGECommunity`
@@ -2099,7 +2107,7 @@ function I6({task: t}) {
             const x = `${L.botLink}/join/?startapp=${o == null ? void 0 : o.reference}`;
             let k = o == null ? void 0 : o.age;
             (o == null ? void 0 : o.age) <= 0 ? k = 1 : (o == null ? void 0 : o.age) > 11 && (k = 11);
-            const l = `https://agecoin.vpnmanager.site/story/${k}.mp4`;
+            const l = `https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/story/${k}.mp4`;
             try {
                 j6.shareToStory(l, {
                     text: `${x} #AGE #AGECommunity`
@@ -2285,7 +2293,7 @@ const M6 = "_view_zhpdf_1"
 }) : t === 3 ? s("span", {
     className: $.medal,
     children: "🥉"
-}) : `#568327518`;
+}) : `#${t}`;
 function j0({id: t, img: o, name: a, balance: i, animate: y, animateBalanceTo: e, animatePlaceTo: x, place: k}) {
     const l = n.useMemo(()=>o || `https://ui-avatars.com/api/?name=${encodeURIComponent(a || "?")}&background=random&color=fff`, [o, a, t]);
     return r("div", {
@@ -75973,7 +75981,7 @@ const k8 = "_inner_mgd6s_1"
     title: "Telegram Premium",
     subTitle: "You know how to get the best",
     value: ()=>s("img", {
-        src: "agecoin.vpnmanager.site/assets/star.png"
+        src: "agecoin.netflify.app/assets/star.png"
     }),
     valueTitle: "Premium user",
     valueSubTitle: "Status confirmed"

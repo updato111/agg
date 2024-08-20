@@ -126,7 +126,7 @@ const H = f0.Fragment
 }
   , L1 = {
     isProd: !0,
-    apiHost: "https://api.allorigins.win/get?url=https://agecoin.vpnmanager.site/api",
+    apiHost: "https://agecoin.netlify.app/api",
     showDebugger: !1,
     botLink: "https://t.me/Dragondemotapbot",
     xLink: "https://x.com/vieradeveloper",
